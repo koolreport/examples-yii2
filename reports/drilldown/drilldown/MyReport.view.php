@@ -22,7 +22,7 @@
     DrillDown::create(array(
         "name"=>"saleDrillDown",
         "title"=>"Sale Report",
-        "global" => ["_csrf" => Yii::$app->request->getCsrfToken()],
+        "global" => [Yii::$app->request->csrfParam => Yii::$app->request->getCsrfToken()],
         "levels"=>array(
             array(
                 "title"=>"All Years",
@@ -48,7 +48,7 @@
                         ),
                         "clientEvents"=>array(
                             "itemSelect"=>"function(params){
-                                console.log('itemSelect');
+                                // console.log('itemSelect');
                                 saleDrillDown.next(
                                     {year: params.selectedRow[0]}
                                 );
