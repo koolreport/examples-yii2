@@ -85,9 +85,10 @@
     ?> 
 </div>
 <script type="text/javascript">
+    // console.log('ajax setup');
     $.ajaxSetup({
         headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
         }
     });
 </script>

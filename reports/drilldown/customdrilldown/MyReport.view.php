@@ -15,6 +15,9 @@
             "title"=>"Sale By Location",
             "subReports"=>array("countrySale","citySale"),
             "themeBase"=>"bs4",
+            // "scope" => [
+            //     Yii::$app->request->csrfParam => Yii::$app->request->getCsrfToken()
+            // ],
         ));
     ?> 
 </div>

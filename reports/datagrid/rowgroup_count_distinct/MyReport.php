@@ -8,7 +8,7 @@ class MyReport extends \koolreport\KoolReport
     public function settings()
     {
         //Get default connection from config.php
-        $config = include __DIR__ . "/../../../config.php";
+        $config = include __DIR__ . "/../../../config/koolreport/config.php";
 
         return array(
             "dataSources"=>array(

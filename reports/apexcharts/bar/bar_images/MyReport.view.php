@@ -113,6 +113,7 @@
                 21
             ]
         ];
+        $homeUrl = Yii::$app->homeUrl;
         \koolreport\apexcharts\BarChart::create(array(
             "title" => "Paths filled by clipped image",
             "yTitle" => "Weight",
@@ -135,7 +136,7 @@
                 ],
                 'fill | type' => 'image',
                 'fill | image' => [
-                    'src' => '../bar_images/images/4274635880_809a4b9d0d_z.jpg',
+                    'src' => $homeUrl . '/assets/images/bar_image/4274635880_809a4b9d0d_z.jpg',
                     'width' => 466,
                     'height' => 406
                 ],

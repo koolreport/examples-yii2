@@ -1,15 +1,17 @@
 <?php
-use \koolreport\pivot\widgets\PivotTable;
 use \koolreport\widgets\koolphp\Table;
+$currentUrl = Yii::$app->request->url;
+$export = '/' . trim($currentUrl, '/') . '/export';
 ?>
 <div class="report-content">
 	<div style='text-align: center;margin-bottom:30px;'>
         <h1>CSV Exportable</h1>
         <p class="lead">How to export datastores to CSV files</p>
 		<form method="post">
-			<button type="submit" class="btn btn-primary" formaction="<?php echo base_url() . uri_string(); ?>/export">Export to CSV</button>
-			<button type="submit" class="btn btn-primary" formaction="<?php echo base_url() . uri_string(); ?>/export?multiply=10">Large CSV (30 thousand rows)</button>
-			<button type="submit" class="btn btn-primary" formaction="<?php echo base_url() . uri_string(); ?>/export?multiply=100">Huge CSV (300 thousand rows)</button>
+			<input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>" />
+			<button type="submit" class="btn btn-primary" formaction="<?php echo $export; ?>">Export to CSV</button>
+			<button type="submit" class="btn btn-primary" formaction="<?php echo $export; ?>?multiply=10">Large CSV (30 thousand rows)</button>
+			<button type="submit" class="btn btn-primary" formaction="<?php echo $export; ?>?multiply=100">Huge CSV (300 thousand rows)</button>
 		</form>
 	</div>
 	<div class='box-container'>

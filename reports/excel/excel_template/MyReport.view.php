@@ -3,8 +3,8 @@
 use \koolreport\pivot\widgets\PivotTable;
 use \koolreport\widgets\koolphp\Table;
 
-$currentPath = Yii::$app->request->pathInfo;
-$exportExcel = '/' . trim($currentPath, '/') . '/export?type=Excel';
+$currentUrl = Yii::$app->request->url;
+$exportExcel = '/' . trim($currentUrl, '/') . '/export?type=Excel';
 ?>
 <div class="report-content">
 	<div style='text-align: center;margin-bottom:30px;'>

@@ -460,7 +460,6 @@
                 "Scatter": "/reports/chartjs/Logarithmic_Scale_Scatter/"
             },
             "Time Scale": {
-                "Line": "/reports/chartjs/Time_Scale_Line/",
                 "Line (point data)": "/reports/chartjs/Time_Scale_Line_point_data/",
                 "Time Series": "/reports/chartjs/Time_Scale_Time_Series/",
                 "Combo": "/reports/chartjs/Time_Scale_Combo/"

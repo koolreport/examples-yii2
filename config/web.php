@@ -12,6 +12,11 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'assetManager' => [
+            'bundles' => [
+                'yii\web\JqueryAsset' => false,
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '4uc4pj72fIepVDPiR613FiJdA2SY2m4W',
@@ -55,7 +60,6 @@ $config = [
                     'route' => 'home/index',
                     'suffix' => '',
                 ],
-                
                 [
                     'pattern' => 'customReport',
                     'route' => 'home/custom-report',

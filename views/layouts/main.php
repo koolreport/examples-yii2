@@ -25,7 +25,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 <head>
     <title>KoolReport Examples &amp; Demonstration</title>
     <?php 
-        // $this->head();
+        $this->head();
     ?>
 </head>
 <body class="d-flex flex-column h-100">
@@ -41,7 +41,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
     </div>
 </main>
 
-<?php $this->endBody() ?>
+<?php 
+    $this->endBody() 
+?>
 </body>
 </html>
-<?php $this->endPage() ?>
+<?php 
+    $this->endPage() 
+?>

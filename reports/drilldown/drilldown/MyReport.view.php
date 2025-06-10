@@ -22,7 +22,9 @@
     DrillDown::create(array(
         "name"=>"saleDrillDown",
         "title"=>"Sale Report",
-        "global" => [Yii::$app->request->csrfParam => Yii::$app->request->getCsrfToken()],
+        // "global" => [
+        //     Yii::$app->request->csrfParam => Yii::$app->request->getCsrfToken()
+        // ],
         "levels"=>array(
             array(
                 "title"=>"All Years",

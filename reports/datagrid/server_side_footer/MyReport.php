@@ -7,7 +7,7 @@ class MyReport extends \koolreport\KoolReport
 {
     function settings()
     {
-        $config = include __DIR__ . "/../../../config.php";
+        $config = include __DIR__ . "/../../../config/koolreport/config.php";
 
         return array(
             "dataSources"=>$config

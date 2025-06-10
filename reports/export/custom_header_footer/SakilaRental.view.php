@@ -4,10 +4,10 @@ use \koolreport\widgets\koolphp\Table;
 use \koolreport\widgets\google\ColumnChart;
 use \koolreport\widgets\google\PieChart;
 
-$currentPath = Yii::$app->request->pathInfo;
-$export = '/' . trim($currentPath, '/') . '/export';
+$currentUrl = Yii::$app->request->url;
+$export = '/' . trim($currentUrl, '/') . '/export';
 ?>
-?>
+
 <div class="report-content" style="width : 80%; padding: 0 auto; margin : 0 auto; text-align: center;">
     <div class="text-center">
         <h1>Cash In Report</h1>

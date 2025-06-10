@@ -3,9 +3,8 @@
 use \koolreport\widgets\koolphp\Table;
 use \koolreport\widgets\google\ColumnChart;
 
-$currentPath = Yii::$app->request->pathInfo;
-$export = '/' . trim($currentPath, '/') . '/export';
-?>
+$currentUrl = Yii::$app->request->url;
+$export = '/' . trim($currentUrl, '/') . '/export';
 ?>
 
 <div class="report-content">

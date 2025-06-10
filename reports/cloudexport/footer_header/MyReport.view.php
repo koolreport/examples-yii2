@@ -7,9 +7,9 @@ use \koolreport\widgets\google;
 use \koolreport\widgets\koolphp\Table;
 use \koolreport\core\Utility as Util;
 
-$currentPath = Yii::$app->request->pathInfo;
-$exportCloudPDF = '/' . trim($currentPath, '/') . '/export?type=cloudPDF';
-$exportCloudJPG = '/' . trim($currentPath, '/') . '/export?type=cloudJPG';
+$currentUrl = Yii::$app->request->url;
+$exportCloudPDF = '/' . trim($currentUrl, '/') . '/export?type=cloudPDF';
+$exportCloudJPG = '/' . trim($currentUrl, '/') . '/export?type=cloudJPG';
 ?>
 <form method="post">
 	<div class="report-content">

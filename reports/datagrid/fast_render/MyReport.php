@@ -20,7 +20,7 @@ class MyReport extends \koolreport\KoolReport
     }   
     protected function setup()
     {
-        for ($i=0; $i<10; $i++) {
+        for ($i=0; $i<2; $i++) {
             $this->src('automaker')
             ->query('select * from customer_product_dollarsales2 ORDER BY RAND()')
             ->pipe($this->dataStore("sales"));
