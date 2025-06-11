@@ -206,7 +206,7 @@
                                 'size' => 0
                             ],
                             'image' => [
-                                'path' => '../../../../assets/images/ico-instagram.png'
+                                'path' => Yii::$app->homeUrl . '/assets/images/ico-instagram.png',
                             ]
                         ]
                     ]

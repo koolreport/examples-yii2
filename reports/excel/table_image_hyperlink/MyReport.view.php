@@ -9,6 +9,7 @@ $exportExcel = '/' . trim($currentUrl, '/') . '/export?type=excel';
         <h1>Excel Exporting Image and Hyperlink Columns</h1>
         <p class="lead">Exporting excel table with image and hyperlink columns</p>
 		<form method="post">
+			<input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>" />
 			<button type="submit" class="btn btn-primary" formaction="<?php echo $exportExcel; ?>">Download Excel</button>
 		</form>
 	</div>
@@ -23,8 +24,9 @@ $exportExcel = '/' . trim($currentUrl, '/') . '/export?type=excel';
 						"type"=>"number",
 					),
 					'image' => [
+						'type' => 'string',
 						'formatValue' => function($value, $row, $ckey) {
-							return '<img src="../../../assets/images/bar.png" height="40px" />';
+							return '<img src="' . Yii::$app->homeUrl . '/assets/images/bar.png" height="40px" />';
 						},
 					],
 					'url' => [

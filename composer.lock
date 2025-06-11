@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "51865033e56a4ee0cffc06713bc56094",
+    "content-hash": "442096bcabead5d8ca2640b548ac7e4d",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -364,88 +364,6 @@
                 "source": "https://github.com/ezyang/htmlpurifier/tree/v4.18.0"
             },
             "time": "2024-11-01T03:51:45+00:00"
-        },
-        {
-            "name": "koolreport/core",
-            "version": "6.6.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/koolreport/core.git",
-                "reference": "8bbca254594c68b182a3cda0b89661d89895e631"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/koolreport/core/zipball/8bbca254594c68b182a3cda0b89661d89895e631",
-                "reference": "8bbca254594c68b182a3cda0b89661d89895e631",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "autoload.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "KoolPHP Inc",
-                    "homepage": "https://www.koolphp.net"
-                }
-            ],
-            "description": "An Open Source PHP Reporting Framework for easier and faster report delivery.",
-            "homepage": "https://www.koolreport.com",
-            "keywords": [
-                "PHP Reporting Framework",
-                "PHP Reporting Tools",
-                "charts and graphs",
-                "data processing",
-                "data visualization"
-            ],
-            "support": {
-                "issues": "https://github.com/koolreport/core/issues",
-                "source": "https://github.com/koolreport/core/tree/v6.6.5"
-            },
-            "time": "2025-05-12T07:01:36+00:00"
-        },
-        {
-            "name": "koolreport/yii2",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/koolreport/yii2.git",
-                "reference": "4398b666089f920bb39882f4a950e06702e974e2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/koolreport/yii2/zipball/4398b666089f920bb39882f4a950e06702e974e2",
-                "reference": "4398b666089f920bb39882f4a950e06702e974e2",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Ease report setup within Yii2 environment",
-            "homepage": "https://www.koolreport.com",
-            "keywords": [
-                "PHP Reporting Framework",
-                "php",
-                "php reprting tools",
-                "yii reporting",
-                "yii2"
-            ],
-            "support": {
-                "issues": "https://github.com/koolreport/yii2/issues",
-                "source": "https://github.com/koolreport/yii2/tree/v1.0.0"
-            },
-            "time": "2020-01-17T10:25:04+00:00"
         },
         {
             "name": "psr/container",

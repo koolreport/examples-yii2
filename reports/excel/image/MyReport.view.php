@@ -12,7 +12,7 @@ $export = '/' . trim($currentUrl, '/') . '/export';
 	</div>
 	<div class='box-container'>
 		<div>
-			<img src="../../assets/images/bar.png" />
+			<img src="<?php echo Yii::$app->homeUrl; ?>/assets/images/bar.png" />
 		</div>
 	</div>
 </div>

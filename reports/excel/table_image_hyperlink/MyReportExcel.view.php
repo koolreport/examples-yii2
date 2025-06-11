@@ -19,7 +19,7 @@
                 'image' => [
                     'formatValue' => function($value, $row, $ckey, $meta) {
                         return \koolreport\excel\Image::create([
-                            'path' => FCPATH . '/assets/images/bar.png',
+                            'path' => Yii::$app->basePath . '/web/assets/images/bar.png',
 
                             // use offsetX, offsetY as margin
                             'offsetX' => 5, // default: 0

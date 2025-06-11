@@ -201,8 +201,8 @@
                 'yaxis | tickAmount' => 7,
                 'fill | image' => [
                     'src' => [
-                        '../images/images/ico-messenger.png',
-                        '../images/images/ico-instagram.png'
+                        Yii::$app->homeUrl . '/assets/images/ico-messenger.png',
+                        Yii::$app->homeUrl . '/assets/images/ico-instagram.png'
                     ],
                     'width' => 40,
                     'height' => 40
