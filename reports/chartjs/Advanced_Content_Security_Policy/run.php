@@ -12,7 +12,7 @@ $report->render();
     <title>
         Scriptable > Bubble | Chart.js sample
     </title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
     <style>
         #content {
             max-width: 640px;

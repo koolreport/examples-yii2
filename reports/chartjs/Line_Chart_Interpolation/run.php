@@ -36,7 +36,7 @@ if (!isset($_POST['command'])) {
     <title>
         Line Chart - Cubic interpolation mode
     </title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
 </head>
 
 <body>
@@ -52,7 +52,7 @@ if (!isset($_POST['command'])) {
                 e.preventDefault();
                 $.ajax({
                     type: "POST",
-                    url:"run.php",
+                    // url:"run.php",
                     data: {
                         command: 'randomizeData',
                     },

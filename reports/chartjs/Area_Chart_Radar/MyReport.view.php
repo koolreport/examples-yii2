@@ -82,7 +82,7 @@
     ];
 
     if (!isset($_POST['command'])) {
-        $seed = $samples->rand();
+        $seed = (int)$samples->rand(8, 16);
         $_SESSION['seed'] = $seed;
         $samples->srand($seed);
         $_SESSION['data'] = $data;
@@ -104,7 +104,7 @@
         }
     }
     if (isset($_POST['command']) && $_POST['command'] === 'randomize') {
-        $seed = $samples->rand();
+        $seed = (int)$samples->rand(8, 16);
         $_SESSION['seed'] = $seed;
         $samples->srand($seed);
         for ($i = 0; $i < 6; $i++) {

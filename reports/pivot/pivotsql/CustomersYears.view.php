@@ -16,7 +16,7 @@
             "id" => "pivotMatrix1",
             'dataSource' => $this->dataStore('pivotData'),
             "scope" => [
-                "_token" => Yii::$app->request->getCsrfToken(),
+                Yii::$app->request->csrfParam => Yii::$app->request->getCsrfToken(),
             ],
             'waitingFields' => array(
                 "productLine" => "label",

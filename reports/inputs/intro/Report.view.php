@@ -20,6 +20,7 @@
         </p>
     </div>
     <form method="post">
+        <input type="hidden" name="<?php echo Yii::$app->request->csrfParam; ?>" value="<?php echo Yii::$app->request->getCsrfToken(); ?>">
         <div class="row">
             <div class="col-md-6 form-group">
                 <strong>TextBox</strong>

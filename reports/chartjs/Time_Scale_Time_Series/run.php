@@ -38,7 +38,7 @@ if (!isset($_POST['command'])) {
     <title>
         Line Chart
     </title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
     <style>
         canvas {
             width: 1000px !important;
@@ -75,7 +75,7 @@ if (!isset($_POST['command'])) {
                 }).get();
                 $.ajax({
                     type: "POST",
-                    url: 'run.php',
+                    // // url: 'run.php',
                     data: {
                         command: 'update',
                         unit: unit,

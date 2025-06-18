@@ -10,7 +10,6 @@ class MyReport extends \koolreport\KoolReport
     {
         $config = include \Yii::getAlias('@app') . "/config/koolreport/config.php";
 
-
         return array(
             "dataSources"=>$config
         );

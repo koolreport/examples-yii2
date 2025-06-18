@@ -1,5 +1,7 @@
 <?php
+
 use \koolreport\pivot\widgets\PivotMatrix;
+
 $currentUrl = Yii::$app->request->url;
 $export = '/' . trim($currentUrl, '/') . '/export';
 ?>
@@ -8,8 +10,9 @@ $export = '/' . trim($currentUrl, '/') . '/export';
 		<div style='text-align: center;margin-bottom:30px;'>
 			<h1>Excel Exporting Template</h1>
 			<p class="lead">Exporting pivot matrix with template</p>
-				<button type="submit" class="btn btn-primary" formaction="<?php echo $export; ?>">Download Excel</button>
-				<input type="hidden" name="koolPivotUpdate" value="1" />
+			<button type="submit" class="btn btn-primary" formaction="<?php echo $export; ?>">Download Excel</button>
+			<input type="hidden" name="koolPivotUpdate" value="1" />
+			<input type="hidden" name="<?php echo Yii::$app->request->csrfParam ?>" content="<?php echo Yii::$app->request->getCsrfToken(); ?>" />
 		</div>
 		<div class='box-container'>
 			<div>

@@ -34,7 +34,7 @@ if (!isset($_POST['command'])) {
     setTimeout(function() {
         $.ajax({
             type: "POST",
-            url: 'run.php',
+            // url: 'run.php',
             data: {
                 command: "second"
             },
@@ -47,7 +47,7 @@ if (!isset($_POST['command'])) {
     setTimeout(function() {
         $.ajax({
             type: "POST",
-            url: 'run.php',
+            // url: 'run.php',
             data: {
                 command: "third"
             },
@@ -60,7 +60,7 @@ if (!isset($_POST['command'])) {
     setTimeout(function() {
         $.ajax({
             type: "POST",
-            url: 'run.php',
+            // url: 'run.php',
             data: {
                 command: "fourth"
             },
@@ -73,7 +73,7 @@ if (!isset($_POST['command'])) {
     setTimeout(function() {
         $.ajax({
             type: "POST",
-            url: 'run.php',
+            // url: 'run.php',
             data: {
                 command: "fifth"
             },
@@ -86,7 +86,7 @@ if (!isset($_POST['command'])) {
     setTimeout(function() {
         $.ajax({
             type: "POST",
-            url: 'run.php',
+            // url: 'run.php',
             data: {
                 command: "sixth"
             },
@@ -99,7 +99,7 @@ if (!isset($_POST['command'])) {
     setTimeout(function() {
         $.ajax({
             type: "POST",
-            url: 'run.php',
+            // url: 'run.php',
             data: {
                 command: "seventh"
             },
@@ -112,7 +112,7 @@ if (!isset($_POST['command'])) {
     setTimeout(function() {
         $.ajax({
             type: "POST",
-            url: 'run.php',
+            // url: 'run.php',
             data: {
                 command: "eighth"
             },
@@ -125,7 +125,7 @@ if (!isset($_POST['command'])) {
     setTimeout(function() {
         $.ajax({
             type: "POST",
-            url: 'run.php',
+            // url: 'run.php',
             data: {
                 command: "ninth"
             },
@@ -138,7 +138,7 @@ if (!isset($_POST['command'])) {
     setTimeout(function() {
         $.ajax({
             type: "POST",
-            url: 'run.php',
+            // url: 'run.php',
             data: {
                 command: "tenth"
             },

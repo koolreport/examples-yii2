@@ -64,6 +64,9 @@ PivotMatrix::create(array(
             "name" => "PivotMatrix1",
             'template' => 'PivotMatrix-Bun',
             "dataStore" => $dataStore,
+            "scope" => [
+                Yii::$app->request->csrfParam => Yii::$app->request->getCsrfToken(),
+            ],
             "rowDimension" => "row",
             "columnDimension" => "column",
             "measures"=>array(

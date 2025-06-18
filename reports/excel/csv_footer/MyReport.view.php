@@ -9,6 +9,7 @@ $export = '/' . trim($currentUrl, '/') . '/export';
         <h1>CSV Footer</h1>
         <p class="lead">How to use footers and aggregates when exporting to CSV</p>
 		<form method="post">
+			<input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>" />
 			<button type="submit" class="btn btn-primary" formaction="<?php echo $export; ?>">Export to CSV</button>
 		</form>
 	</div>

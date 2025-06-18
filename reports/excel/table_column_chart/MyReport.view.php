@@ -10,6 +10,7 @@ $exportExcel = '/' . trim($currentUrl, '/') . '/export?type=excel';
 		<h1>Excel Exporting Charts in Table</h1>
 		<p class="lead">Exporting table with chart column</p>
 		<form method="post">
+			<input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>" />
 			<button type="submit" class="btn btn-primary" formaction="<?php echo $exportExcel; ?>">Download Excel</button>
 		</form>
 	</div>

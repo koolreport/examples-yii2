@@ -35,7 +35,7 @@ if (!isset($_POST['command'])) {
     <title>
         area > datasets | Chart.js sample
     </title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
     <style>
         body,
         html {
@@ -43,7 +43,7 @@ if (!isset($_POST['command'])) {
             font-family: 'Lato', sans-serif;
             line-height: 1.6;
             padding: 0;
-            margin: 0;
+            margin-top: 20px;
         }
 
         .content {
@@ -95,7 +95,7 @@ if (!isset($_POST['command'])) {
                 e.preventDefault();
                 $.ajax({
                     type: "POST",
-                    url: "run.php",
+                    // url: "run.php",
                     data: {
                         command: "smooth"
                     },
@@ -108,7 +108,7 @@ if (!isset($_POST['command'])) {
                 e.preventDefault();
                 $.ajax({
                     type: "POST",
-                    url: 'run.php',
+                    // // url: 'run.php',
                     data: {
                         command: "randomize"
                     },
@@ -121,7 +121,7 @@ if (!isset($_POST['command'])) {
                 e.preventDefault();
                 $.ajax({
                     type: "POST",
-                    url: "run.php",
+                    // url: "run.php",
                     data: {
                         command: "propagate"
                     },

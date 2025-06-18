@@ -113,6 +113,9 @@ PivotMatrix::create(array(
         PivotMatrix::create(array(
             "name" => "PivotMatrix2",
             "dataSource" => $dataStore,
+            "scope" => [
+                Yii::$app->request->csrfParam => Yii::$app->request->getCsrfToken(),
+            ],
             'paging' => array(
                 'size' => 20
             ),

@@ -68,14 +68,14 @@
     ];
 
     if (!isset($_POST['command'])) {
-        $seed = $samples->rand();
+        $seed = (int)$samples->rand(0,100);
         $_SESSION['seed'] = $seed;
         $samples->srand($seed);
         $_SESSION['data'] = $data;
     }
 
     if (isset($_POST['command']) && $_POST['command'] === 'randomize') {
-        $seed = $samples->rand();
+        $seed = (int)$samples->rand(0,100);
         $_SESSION['seed'] = $seed;
         $samples->srand($seed);
         $randomData = $samples->numbers($inputs);
@@ -86,7 +86,7 @@
     }
 
     if (isset($_POST['command']) && $_POST['command'] === 'addData') {
-        $seed = $samples->rand();
+        $seed = (int)$samples->rand(0,100);
         $_SESSION['seed'] = $seed;
         $samples->srand($seed);
         $count = count($_SESSION['data']);

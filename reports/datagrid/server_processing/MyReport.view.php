@@ -32,7 +32,7 @@ DataTables::create(array(
     ...
     "dataSource" => function() {
         return $this->src('employees')
-        ->query('select * from employees_salaries');
+        ->query('select * from salaries');
     },
     "serverSide"=>true,
     // "method"=>'post', //default method = 'get'

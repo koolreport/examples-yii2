@@ -21,6 +21,9 @@
         PivotMatrix::create(array(
             "id" => "pivotMatrix1",
             'dataSource' => $this->dataStore('sales'),
+            "scope" => [
+                Yii::$app->request->csrfParam => Yii::$app->request->getCsrfToken(),
+            ],
             "serverPaging" => true,
             // 'rowCollapseLevels' => array(0),
             'width' => '100%',

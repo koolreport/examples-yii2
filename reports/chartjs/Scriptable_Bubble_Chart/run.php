@@ -36,7 +36,21 @@ if (!isset($_POST['command'])) {
     <title>
         Scriptable > Bubble | Chart.js sample
     </title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <style>
+        .content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .toolbar {
+            display: flex;
+        }
+
+        .toolbar>* {
+            margin: 0 8px 0 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -54,7 +68,7 @@ if (!isset($_POST['command'])) {
                 e.preventDefault();
                 $.ajax({
                     type: "POST",
-                    url: 'run.php',
+                    // // url: 'run.php',
                     data: {
                         command: 'randomize',
                     },
@@ -67,7 +81,7 @@ if (!isset($_POST['command'])) {
                 e.preventDefault();
                 $.ajax({
                     type: "POST",
-                    url: 'run.php',
+                    // // url: 'run.php',
                     data: {
                         command: 'addDataset',
                     },
@@ -80,7 +94,7 @@ if (!isset($_POST['command'])) {
                 e.preventDefault();
                 $.ajax({
                     type: "POST",
-                    url: 'run.php',
+                    // // url: 'run.php',
                     data: {
                         command: 'removeDataset',
                     },

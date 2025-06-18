@@ -8,6 +8,7 @@ $exportExcel = '/' . trim($currentUrl, '/') . '/export?type=excel';
         <h1>Excel Exporting Table Column Width and Row Height</h1>
         <p class="lead">Exporting excel table with column width and row height</p>
 		<form method="post">
+			<input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>" />
 			<button type="submit" class="btn btn-primary" formaction="<?php echo $exportExcel; ?>">Download Excel</button>
 		</form>
 	</div>

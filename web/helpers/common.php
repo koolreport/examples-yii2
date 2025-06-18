@@ -26,5 +26,5 @@ $menu = json_decode(file_get_contents(realpath(dirname(__FILE__))."/../reports.j
 $root_url = getRootUrl();
 // $root_url = "/htdocs/KoolReport/GitHub-examples";
 // $root_url = "/htdocs/testCodeIgniter/public";
-// $root_url = "http://yii2test.local:8080/";
+$root_url = "http://yii2.local/";
 // echo "root_url=$root_url<br>";

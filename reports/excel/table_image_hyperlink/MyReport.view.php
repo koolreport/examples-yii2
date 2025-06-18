@@ -26,7 +26,7 @@ $exportExcel = '/' . trim($currentUrl, '/') . '/export?type=excel';
 					'image' => [
 						'type' => 'string',
 						'formatValue' => function($value, $row, $ckey) {
-							return '<img src="' . Yii::$app->homeUrl . '/assets/images/bar.png" height="40px" />';
+							return '<img src="' . Yii::$app->request->url . '../../../../assets/images/bar.png" height="40px" />';
 						},
 					],
 					'url' => [

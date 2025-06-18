@@ -11,6 +11,7 @@ $exportBigSpreadsheet = '/' . trim($currentUrl, '/') . '/export?type=bigspreadsh
         <h1>Excel Table Complex Header</h1>
         <p class="lead">Exporting table with complex headers</p>
 		<form method="post">
+			<input type="hidden" name="<?= Yii::$app->request->csrfParam; ?>" value="<?= Yii::$app->request->csrfToken; ?>" />
 			<button type="submit" class="btn btn-primary" formaction="<?php echo $exportExcel; ?>">Download Excel</button>
 			<button type="submit" class="btn btn-primary" formaction="<?php echo $exportBigSpreadsheet; ?>t">Download Big Spreadsheet</button>
 		</form>

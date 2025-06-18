@@ -34,7 +34,7 @@ if (!isset($_POST['command'])) {
     setTimeout(function() {
         $.ajax({
             type: "POST",
-            url: 'run.php',
+            // url: 'run.php',
             data: {
                 command: "first"
             },
@@ -46,7 +46,7 @@ if (!isset($_POST['command'])) {
     setTimeout(function() {
         $.ajax({
             type: "POST",
-            url: 'run.php',
+            // url: 'run.php',
             data: {
                 command: "second"
             },
@@ -58,7 +58,7 @@ if (!isset($_POST['command'])) {
     setTimeout(function() {
         $.ajax({
             type: "POST",
-            url: 'run.php',
+            // url: 'run.php',
             data: {
                 command: "final"
             },

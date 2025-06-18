@@ -37,20 +37,20 @@
         ['month' => 'July',      'Dataset 1' => randomScalingFactor(), 'Dataset 2' => randomScalingFactor()],
     ];
 
-    $dataset = array('month');
-    $datasetString = '';
-    $colorIndex = 0;
+    $series = array('month');
+    $seriesString = '';
     if (!isset($_POST['command'])) {
         $_SESSION["numberOfDataset"] = 2;
         $_SESSION['data'] = $data;
         for ($i = 1; $i <= $_SESSION['numberOfDataset']; $i++) {
-            array_push($dataset, 'Dataset ' . $i);
+            array_push($series, 'Dataset ' . $i);
         }
-        foreach ($dataset as $key => $seri) {
+        $colorIndex = 0;
+        foreach ($series as $key => $seri) {
             if ($key > 0) {
-                $dataset[$seri] = [
+                $series[$seri] = [
                     'backgroundColor' => $rgba[$colorIndex],
-                    'borderColor' => $rgb[$colorIndex],
+                    'borderColor' => $rgb[$colorIndex]
                 ];
                 $colorIndex = ($colorIndex + 1) % count($rgb);
             }
@@ -60,15 +60,16 @@
     if (isset($_POST['command']) && $_POST['command'] === 'randomizeData') {
         foreach ($_SESSION['data'] as &$entry) {
             for ($i = 0; $i <= $_SESSION['numberOfDataset']; $i++) {
-                $entry['Dataset ' . $i] = mt_rand() < 0.2 ? 0.0 : randomScalingFactor();
+                $entry['Dataset ' . $i] = mt_rand() < 0.2 ? 0 : randomScalingFactor();
             }
         }
         for ($i = 1; $i <= $_SESSION['numberOfDataset']; $i++) {
-            array_push($dataset, 'Dataset ' . $i);
+            array_push($series, 'Dataset ' . $i);
         }
-        foreach ($dataset as $key => $seri) {
+        $colorIndex = 0;
+        foreach ($series as $key => $seri) {
             if ($key > 0) {
-                $dataset[$seri] = [
+                $series[$seri] = [
                     'backgroundColor' => $rgba[$colorIndex],
                     'borderColor' => $rgb[$colorIndex]
                 ];
@@ -79,16 +80,17 @@
 
     if (isset($_POST['command']) && $_POST['command'] === 'addDataset') {
         $_SESSION['numberOfDataset'] = $_SESSION['numberOfDataset'] + 1;
-        $datasetString = 'Dataset ' . $_SESSION['numberOfDataset'];
+        $seriesString = 'Dataset ' . $_SESSION['numberOfDataset'];
         foreach ($_SESSION['data'] as &$entry) {
-            $entry[$datasetString] = mt_rand() < 0.2 ? 0 :  randomScalingFactor();
+            $entry[$seriesString] = randomScalingFactor();
         }
         for ($i = 1; $i <= $_SESSION['numberOfDataset']; $i++) {
-            array_push($dataset, 'Dataset ' . $i);
+            array_push($series, 'Dataset ' . $i);
         }
-        foreach ($dataset as $key => $seri) {
+        $colorIndex = 0;
+        foreach ($series as $key => $seri) {
             if ($key > 0) {
-                $dataset[$seri] = [
+                $series[$seri] = [
                     'backgroundColor' => $rgba[$colorIndex],
                     'borderColor' => $rgb[$colorIndex]
                 ];
@@ -99,17 +101,17 @@
 
     if (isset($_POST['command']) && $_POST['command'] == 'removeDataset') {
         if ($_SESSION['numberOfDataset'] > 0) {
-            $datasetString = 'Dataset ' . $_SESSION['numberOfDataset'];
             foreach ($_SESSION['data'] as &$item) {
-                unset($item[$datasetString]);
+                array_splice($item, -1, 1);
             }
             $_SESSION['numberOfDataset'] = $_SESSION['numberOfDataset'] - 1;
             for ($i = 1; $i <= $_SESSION['numberOfDataset']; $i++) {
-                array_push($dataset, 'Dataset ' . $i);
+                array_push($series, 'Dataset ' . $i);
             }
-            foreach ($dataset as $key => $seri) {
+            $colorIndex = 0;
+            foreach ($series as $key => $seri) {
                 if ($key > 0) {
-                    $dataset[$seri] = [
+                    $series[$seri] = [
                         'backgroundColor' => $rgba[$colorIndex],
                         'borderColor' => $rgb[$colorIndex]
                     ];
@@ -141,11 +143,12 @@
             array_push($_SESSION['data'], $_SESSION['temporaryData']);
         }
         for ($i = 1; $i <= $_SESSION['numberOfDataset']; $i++) {
-            array_push($dataset, 'Dataset ' . $i);
+            array_push($series, 'Dataset ' . $i);
         }
-        foreach ($dataset as $key => $seri) {
+        $colorIndex = 0;
+        foreach ($series as $key => $seri) {
             if ($key > 0) {
-                $dataset[$seri] = [
+                $series[$seri] = [
                     'backgroundColor' => $rgba[$colorIndex],
                     'borderColor' => $rgb[$colorIndex]
                 ];
@@ -157,12 +160,12 @@
     if (isset($_POST['command']) && $_POST['command'] == 'removeData') {
         array_pop($_SESSION['data']);
         for ($i = 1; $i <= $_SESSION['numberOfDataset']; $i++) {
-            array_push($dataset, 'Dataset ' . $i);
+            array_push($series, 'Dataset ' . $i);
         }
-        $colorIndex = $_SESSION['colorIndex'];
-        foreach ($dataset as $key => $seri) {
+        $colorIndex = 0;
+        foreach ($series as $key => $seri) {
             if ($key > 0) {
-                $dataset[$seri] = [
+                $series[$seri] = [
                     'backgroundColor' => $rgba[$colorIndex],
                     'borderColor' => $rgb[$colorIndex]
                 ];
@@ -174,7 +177,7 @@
 
     \koolreport\chartjs\ColumnChart::create(array(
         'dataSource' => $_SESSION['data'],
-        'columns' => $dataset,
+        'columns' => $series,
         "options" => array(
             "responsive" => true,
             "legend" => array(

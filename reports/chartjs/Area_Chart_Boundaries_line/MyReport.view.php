@@ -73,7 +73,7 @@
     ];
 
     if (!isset($_POST['command'])) {
-        $seed = $samples->rand();
+        $seed = (int)$samples->rand(-100, 100);
         $_SESSION['seed'] = $seed;
         $samples->srand($seed);
         $_SESSION['data'] = $data;
@@ -87,7 +87,7 @@
         }
     }
     if (isset($_POST['command']) && $_POST['command'] === 'randomize') {
-        $seed = $samples->rand();
+        $seed = (int)$samples->rand(-100, 100);
         $_SESSION['seed'] = $seed;
         $samples->srand($seed);
         $randomNumbers = $samples->numbers($inputs);

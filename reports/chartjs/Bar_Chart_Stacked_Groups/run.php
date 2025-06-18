@@ -38,7 +38,7 @@ if (isset($_GET)) {
     <title>
         Stacked Bar Chart with Groups
     </title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
 </head>
 
 <body>
@@ -51,7 +51,7 @@ if (isset($_GET)) {
                 e.preventDefault();
                 $.ajax({
                     type: "POST",
-                    url: 'run.php',
+                    // // url: 'run.php',
                     data: {
                         command: 'randomizeData',
                     },

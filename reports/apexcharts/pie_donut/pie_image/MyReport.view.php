@@ -29,7 +29,7 @@
                 45
             ]
         ];
-        $homeUrl = Yii::$app->homeUrl;
+        $Url = Yii::$app->homeUrl;
         \koolreport\apexcharts\PieChart::create(array(
             // "title" => "Pie Chart",
             "dataSource" => $data,
@@ -39,10 +39,10 @@
             "options" => [
                 'fill | image' => [
                     'src' => [
-                        $homeUrl . '/assets/images/pie_image/stripes.jpg',
-                        $homeUrl . '/assets/images/pie_image/1101098.png',
-                        $homeUrl . '/assets/images/pie_image/4679113782_ca13e2e6c0_z.jpg',
-                        $homeUrl . '/assets/images/pie_image/2979121308_59539a3898_z.jpg'
+                        $Url . 'assets/images/pie_image/stripes.jpg',
+                        $Url . 'assets/images/pie_image/1101098.png',
+                        $Url . 'assets/images/pie_image/4679113782_ca13e2e6c0_z.jpg',
+                        $Url . 'assets/images/pie_image/2979121308_59539a3898_z.jpg'
                     ],
                     'width' => 25,
                     'imagedHeight' => 25,
