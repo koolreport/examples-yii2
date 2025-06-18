@@ -7,7 +7,7 @@
 
         <div class="row">
             <div class="col-md-10 offset-md-1">
-                <img class="img-fluid rounded" src="<?php echo Yii::$app->request->url; ?>../../../../assets/images/dashboard.png"/>
+                <img class="img-fluid rounded" src="<?php echo Yii::$app->homeUrl; ?>assets/images/dashboard.png"/>
             </div>
         </div>
         <p class='mt-4'>
