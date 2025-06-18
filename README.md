@@ -24,106 +24,110 @@ koolreport
 ## By composer
 
 ```
+composer require koolreport/core
 composer require koolreport/yii2
 ```
-
-# Documentation
-
-## Step-by-step tutorial
-
-#### Step 1: Create report and claim friendship with Laravel
-
-1. First, you create folder `reports` inside root folder
-2. Inside reports folder, create two files `MyReport.php` and `MyReport.view.php`
-3. Adding `use \koolreport\yii2\Friendship` to your report like following
-
-`MyReport.php`
+or install `koolreport/pro` if you have a license for it
 
 ```
-<?php
-namespace app\reports;
+composer require koolreport/pro
+```
 
+# Create reports using friendship trait for setting up assets and datasources
+
+1. Inside `app` directory, create `reports` subdirectory to hold your reports.
+2. Create `MyReport.php` and `MyReport.view.php` inside `reports` directory. Please see the contents of two files in our repository.
+3. Add \koolreport\yii2\Friendship trait to your report like following:
+
+```
 class MyReport extends \koolreport\KoolReport
 {
     use \koolreport\yii2\Friendship;
-    // By adding above statement, you have claim the friendship between two frameworks
-    // As a result, this report will be able to accessed all databases of Yii2
-    // There are no need to define the settings() function anymore
-    // while you can do so if you have other datasources rather than those
-    // defined in Laravel.
-    
+    ...
+```
+This trait would help the report to publish js, css assets to Yii2's `web` directory in a subdirectory called `koolreport_assets` as well as allow using Yii2's database settings in the report.
 
-    function setup()
+## Create route and action
+
+In `config/web.php`, create a route to your report and its action with a controller:
+
+```
+        'urlManager' => [
+            'rules' => [
+                [
+                    'pattern' => 'customReport',
+                    'route' => 'home/custom-report',
+                    'suffix' => '',
+                ],
+```
+
+In the `HomeController` controller (`controllers/HomeController.php`), create the action method:
+
+```
+    public function actionCustomReport()
     {
-        $this->src("default")
-        ->query("SELECT * FROM offices")
-        ->pipe($this->dataStore("offices"));        
-    }
-}
-```
-
-`MyReport.view.php`
-
-```
-<?php
-use \koolreport\widgets\koolphp\Table;
-?>
-<html>
-    <head>
-    <title>My Report</title>
-    </head>
-    <body>
-        <h1>It works</h1>
-        <?php
-        Table::create([
-            "dataSource"=>$this->dataStore("offices")
+        $report = new \app\reports\MyReport();
+        $report->run();
+        return $this->render('customReport', [
+            'report_content' => $report->render()
         ]);
-        ?>
-    </body>
+    }
+```
+Create the report view `views/home/customReport.php` and put your report content anywhere you like:
+
+```
+<html>
+...
+<?php echo $report_content; ?>
 </html>
 ```
 
-#### Step 2: Run report and display report
+All done!
 
-Now you have MyReport ready, in order to get report display inside Yii2, you will create MyReport's object in controller and pass that object to the view to render.
+## View result
 
-
-`HomeController.php`
-
-```
-<?php
-
-namespace app\controllers;
-
-use Yii;
-use yii\filters\AccessControl;
-use yii\web\Controller;
-use yii\web\Response;
-use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
-
-class SiteController extends Controller
-{
-    ...
-    public function actionReport()
-    {
-        $report = new \app\reports\MyReport;
-        $report->run();
-        return $this->render('report',array(
-            "report"=>$report
-        ));
-        
-    }
-}
-```
-
-`report.php`
+Put your CodeIgniter app on your server/localhost. Then you can access after running
 
 ```
-<?php $report->render(); ?>
+http://locahost/examples-yii2/web/customReport
 ```
 
-# Support
+![combochart](combochart.png)
 
-Please use our forum if you need support, by this way other people can benefit as well. If the support request need privacy, you may send email to us at __support@koolreport.com__.
+## CSRF field/token in form submissions and xhr requests
+
+In reports with form submission or xhr request users need to add csrf field/token to the form and request for server response to work.
+
+For example, adding csrf field to form:
+
+```
+    <form method="post">
+        <input type="hidden" name="<?= Yii::$app->request->csrfParam ?>" value="<?= Yii::$app->request->getCsrfToken() ?>">
+```
+or add csrf token to request:
+
+```
+    <script>
+        subReport.update("SaleByCountriesReport", {
+            <?php echo Yii::$app->request->csrfParam; ?>: "<?php echo Yii::$app->request->getCsrfToken(); ?>"
+        });
+```
+or set csrf token in jQuery's ajax setup:
+
+```
+<meta name="csrf-token" content="<?= Yii::$app->request->getCsrfToken() ?>" />
+...
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
+```
+
+# Summary
+
+KoolReport is a great php reporting framework. You can use KoolReport alone with pure php or inside any modern MVC frameworks like Yii2, CakePHP, CodeIgniter, Yii2. If you have any questions regarding KoolReport, free free to contact us at [our forum](https://www.koolreport.com/forum/topics) or email to [support@koolreport.com](mailto:support@koolreport.com).
+
+__Happy Reporting!__
